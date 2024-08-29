@@ -1,23 +1,16 @@
 
-// const url = 'https://api.weatherstack.com/current?access_key=7dedb330a88f9f82c669828804eca7dc&query=New Delhi';
-// const options = {
-// 	method: 'GET'
-// };
-
-// fetch(url,options).then(response=>response.json()).then(jsonData=> console.log(jsonData))
-
-
 const express = require('express');
 
 const app = express();
 
+//Initializing the Server
 app.listen(3000,()=>{
     console.log('Server running at http://localhost:3000/')
 })
 
-// app.get('/', async(request,response)=>{
-//     response.send('Hello World');
-// })
+
+//calling API to get weather details
+//Enter city name at the end of url and search for weather details 'http://localhost:3000/weather?city='
 
 app.get('/weather/', async(req,res)=>{
     const {city} = req.query;
@@ -40,5 +33,4 @@ app.get('/weather/', async(req,res)=>{
         uv_index: response.current.uv_index
     }
     res.send(weatherInfo)
-    // res.send(response)
 })
