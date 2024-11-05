@@ -14,7 +14,7 @@ app.listen(3000,()=>{
 
 app.get('/weather/', async(req,res)=>{
     const {city} = req.query;
-    const url = `https://api.weatherstack.com/current?access_key=7dedb330a88f9f82c669828804eca7dc&query=${city}`
+    const url = `https://api.weatherstack.com/current?access_key=ca9557d389950a51530bf831f4d48a50&query=${city}`
     let options = {
         method: "GET"
       };
